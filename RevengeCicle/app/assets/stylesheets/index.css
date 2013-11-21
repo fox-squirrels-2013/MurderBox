@@ -1,6 +1,7 @@
 body {
   width: 90%;
   margin: 0 auto;
+  background-color: #D8005F;
 }
 #nav, #feature, #footer{
   margin: 1%;
