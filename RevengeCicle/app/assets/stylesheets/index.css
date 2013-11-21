@@ -1,0 +1,24 @@
+body {
+  width: 90%;
+  margin: 0 auto;
+  background-color: #D8005F;
+}
+#nav, #feature, #footer{
+  margin: 1%;
+}
+
+li{
+  display: block;
+  padding: .1em;
+}
+
+#nav, #footer{
+  background-color: #efefef;
+  padding: 0.5em 0;
+}
+
+#feature, .posting{
+  height: 10em;
+  margin-bottom: 1em;
+  background-color: #87EA00;
+}
