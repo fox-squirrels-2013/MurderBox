@@ -48,3 +48,4 @@ production:
   encoding: unicode
   database: RevengeCicle_production
   pool: 5
+
