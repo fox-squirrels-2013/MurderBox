@@ -7,6 +7,16 @@
 <div class="comment">
 <p><%= comment.author %></p>
 <p><%= comment.body %></p>
+<p>
+<form accept-charset="UTF-8" action="/comments/<%= comment.id %>" method="post">
+    <input name="_method" type="hidden" value="put" />
+    <input name="comment_id" type="hidden" value="<%= comment.id %>" />
+    <input name="post_id" type="hidden" value="<%= @post.id %>" />
+    Votes: <%= comment.votes %> - <button name="vote_type" value="up" type="submit">+1</button> <button name="vote_type" value="down" type="submit">-1</button>
+</form>
+
+
+</p>
 </div>
 <% end %>
 
