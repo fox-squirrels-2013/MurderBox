@@ -1,13 +1,13 @@
-<h1> RevengeCicle </h1>
+<h1> RevengeSicle </h1>
 
 <% if @posts == nil %>
   <%= "no posts" %>
 <% else %>
-<ol>
+<ul>
   <% @posts.each do |post| %>
   <li><%= link_to post.title %></li>
   <% end %>
-</ol>
+</ul>
 <% end %>
 
 <%= form_for @post do |form| %>
