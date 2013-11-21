@@ -1,0 +1,6 @@
+<h1> RevengeCicle </h1>
+
+<% @posts.each do |post| %>
+<% link_to post.title, @posts, action: "show" %>
+<% end %>
+
