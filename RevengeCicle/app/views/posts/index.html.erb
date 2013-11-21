@@ -1,6 +1,20 @@
 <h1> RevengeCicle </h1>
 
-<% @posts.each do |post| %>
-<% link_to post.title, @posts, action: "show" %>
+<% if @posts == nil %>
+  <%= "no posts" %>
+<% else %>
+<ol>
+  <% @posts.each do |post| %>
+  <li><%= link_to post.title %></li>
+  <% end %>
+</ol>
+<% end %>
+
+<%= form_for @post do |form| %>
+  <%= form.text_field :title, placeholder: 'Title' %><br>
+  <%= form.text_area :body, rows: 5, cols: 100, placeholder: "What's your beef?" %><br>
+  <%= form.text_field :author, placeholder: 'Your name' %>
+  <%= form.text_field :revengemail, placeholder: 'send revenge email to' %><br>
+  <%= form.submit "Murder Time ..." %>
 <% end %>
 

@@ -49,4 +49,3 @@ production:
   database: RevengeCicle_production
   pool: 5
 
-

@@ -1,6 +1,6 @@
 RevengeCicle::Application.routes.draw do
 
-  resources :posts, only: [:index]
+  resources :posts, only: [:index, :create, :show]
 
-  root :to => posts_path
+  root :to => "posts#index"
 end
