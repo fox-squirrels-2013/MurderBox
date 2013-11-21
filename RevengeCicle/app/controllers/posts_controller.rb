@@ -1,21 +1,20 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Post.order("id DESC").limit(10)
     @post = Post.new
   end
 
   def show
     @post = Post.find(params[:id])
-    @comment = Comment.all.find_by post_id: params[:id]
+    @comment = Comment.all
   end
 
   def create
-    @post = Post.new(params[:post])
-    if @post.save
-      redirect_to posts_path
+    post = Post.new(params[:post])
+    if post.save
+      render partial: "posts/post", locals: { post: post }
     else
-      @posts = Post.all
-      render :index
+      render status: :unprocessable_entity, text: post.errors.full_messages.join('<br>')
     end
   end
 
