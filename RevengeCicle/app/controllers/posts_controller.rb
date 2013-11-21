@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.order("id DESC").limit(10)
+    @posts = Post.order("id DESC").limit(6)
     @post = Post.new
   end
 

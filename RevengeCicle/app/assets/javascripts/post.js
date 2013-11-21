@@ -1,7 +1,6 @@
 $(function(){
 
 	function onSuccess(e, response){
-		debugger
 		$("ul").prepend(response);
 	}
 

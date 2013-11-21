@@ -1,15 +1,41 @@
 body {
   width: 90%;
   margin: 0 auto;
-  background-color: #D8005F;
+  background: url("http://behance.vo.llnwd.net/profiles15/4685/projects/5952097/371b03d707548d4dbb6c8b6895d45f33.jpg");
+  background-size: cover;
+  background-position: center;
 }
 #nav, #feature, #footer{
   margin: 1%;
 }
 
-li{
+#feature{
   display: block;
   padding: .1em;
+  color: white;
+  font-size: 18px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #CE0071;
+}
+
+ul{
+  list-style-type: none;
+  padding: 0px;
+}
+
+li{
+  padding: 1px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #CE0071;
+}
+
+a:visited{
+  color: white;
+}
+a:link{
+  color:white;
 }
 
 #nav, #footer{
