@@ -3,7 +3,7 @@
   <p><%= comment.author %></p>
   <p><%= comment.body %></p>
   <p>
-    <form accept-charset="UTF-8" action="/comments/<%= comment.id %>" method="post">
+   <form accept-charset="UTF-8" action="/comments/<%= comment.id %>" method="post">
       <input name="_method" type="hidden" value="put" />
       <input name="comment_id" type="hidden" value="<%= comment.id %>" />
       <input name="post_id" type="hidden" value="<%= comment.post_id %>" />
@@ -12,3 +12,10 @@
   </p>
 
 </li>
+
+ <%= form_for comment do |com| %>
+  <%= com.hidden_field :post_id, value: comment.post_id %>
+  <%= com.hidden_field :comment_id, value: comment.id %>
+  <%= com.submit  "up" %>
+  <%= com.submit  "down" %>
+  <% end %>
