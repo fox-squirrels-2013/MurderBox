@@ -1,0 +1,97 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/apprentice/Desktop/MurderBox/RevengeCicle/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/MurderBox/RevengeCicle/app/helpers/application_helper.rb": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/apprentice/Desktop/MurderBox/RevengeCicle/app/controllers/comments_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        2,
+        2,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/apprentice/Desktop/MurderBox/RevengeCicle/app/models/comment.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        0,
+        0,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null
+      ],
+      "/Users/apprentice/Desktop/MurderBox/RevengeCicle/app/controllers/posts_controller.rb": [
+        1,
+        1,
+        4,
+        4,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        4,
+        4,
+        3,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/apprentice/Desktop/MurderBox/RevengeCicle/app/models/post.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1385094414
+  }
+}
