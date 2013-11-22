@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(:version => 20131121002930) do
     t.integer "post_id"
     t.text    "body"
     t.string  "author"
-    t.integer "votes"
+    t.integer "votes",   :default => 0
   end
 
   create_table "posts", :force => true do |t|

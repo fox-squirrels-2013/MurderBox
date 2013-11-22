@@ -8,6 +8,7 @@ class Comment < ActiveRecord::Base
     self.votes += 1
     self.save
   end
+  
   def down_vote
     self.votes -= 1
     self.save

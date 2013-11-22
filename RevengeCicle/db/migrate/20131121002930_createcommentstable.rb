@@ -4,7 +4,7 @@ class Createcommentstable < ActiveRecord::Migration
       t.belongs_to :post
       t.text :body
       t.string :author
-      t.integer :votes
+      t.integer :votes, :default => 0
     end
   end
 end
