@@ -15,6 +15,7 @@
 
 <% Comment.where("post_id = ?", @post.id).order("votes DESC").each do |comment| %>
 <div class="comment">
+
 <p><%= comment.author %></p>
 <p><%= comment.body %></p>
 <p>
@@ -30,7 +31,9 @@
 <% end %>
 
 <%= form_for @comment do |comment_form|  %>
-  <%= comment_form.text_area :body %>
-  <%= comment_form.text_field :author %>
-  <%= comment_form.submit "Create" %>
+
+<%= comment_form.text_area :body, rows: 5, cols: 100, placeholder: "Serve this fool!"%><br>
+<%= comment_form.text_field :author, placeholder: "Who are you?" %>
+  <%= comment_form.submit "Your Dis" %>
+
 <% end %>

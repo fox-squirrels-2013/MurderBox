@@ -1,11 +1,12 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.order("id DESC").limit(10)
+    @posts = Post.order("id DESC").limit(5)
     @post = Post.new
   end
 
   def show
     @post = Post.find(params[:id])
+    @comments = Comment.where("post_id = ?", params[:id]).order("votes DESC")
     @comment = Comment.new
   end
 

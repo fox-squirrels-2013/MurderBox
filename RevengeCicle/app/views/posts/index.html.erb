@@ -1,23 +1,24 @@
-<h1> RevengeSicle </h1>
+<div id="container">
+	<h1> RevengeSicle </h1>
 
-<div id="feature">
-<% if @posts == nil %>
-  <%= "no posts" %>
-<% else %>
-<ul>
-  <% @posts.each do |post| %>
-  <%= render "posts/post", post: post %>
-  <% end %>
-</ul>
-<% end %>
+	<div id="feature">
+		<% if @posts == nil %>
+		<%= "no posts" %>
+		<% else %>
+		<ul>
+			<% @posts.each do |p| %>
+			<%= render "posts/post", post: p %>
+			<% end %>
+		</ul>
+		<% end %>
+	</div>
+	<div class = "posting">
+		<%= form_for @post, remote: true do |form| %>
+		<%= form.text_field :title, placeholder: 'Title' %><br>
+		<%= form.text_area :body, rows: 5, cols: 100, placeholder: "What's your beef?" %><br>
+		<%= form.text_field :author, placeholder: 'Your name' %>
+		<%= form.text_field :revengemail, placeholder: 'send revenge email to' %><br>
+		<%= form.submit "Murder Time ..." %>
+		<% end %>
+	</div>
 </div>
-<div class = "posting">
-<%= form_for @post, remote: true do |form| %>
-  <%= form.text_field :title, placeholder: 'Title' %><br>
-  <%= form.text_area :body, rows: 5, cols: 100, placeholder: "What's your beef?" %><br>
-  <%= form.text_field :author, placeholder: 'Your name' %>
-  <%= form.text_field :revengemail, placeholder: 'send revenge email to' %><br>
-  <%= form.submit "Murder Time ..." %>
-<% end %>
-</div>
-

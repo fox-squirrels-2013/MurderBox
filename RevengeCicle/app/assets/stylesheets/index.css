@@ -1,24 +1,39 @@
 body {
-  width: 90%;
+  position: absolute;
   margin: 0 auto;
-  background-color: #D8005F;
+  background: url("http://behance.vo.llnwd.net/profiles15/4685/projects/5952097/371b03d707548d4dbb6c8b6895d45f33.jpg");
+  background-size: cover;
+  background-position: center;
 }
-#nav, #feature, #footer{
-  margin: 1%;
+
+#feature{
+  display: block;
+  padding: 1px;
+  color: white;
+  font-size: 18px;
+  background-color: #87EA00;
+  border-style: solid;
+  border-width: 7px;
+  border-color: #CE0071;
+  border-radius: 20px;
+}
+
+ul{
+  list-style-type: none;
+  padding: 1px;
 }
 
 li{
-  display: block;
-  padding: .1em;
+  padding: 5px;
+  margin: 1px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #CE0071;
 }
 
-#nav, #footer{
-  background-color: #efefef;
-  padding: 0.5em 0;
+a:visited{
+  color: white;
 }
-
-#feature, .posting{
-  height: 10em;
-  margin-bottom: 1em;
-  background-color: #87EA00;
+a:link{
+  color:white;
 }
