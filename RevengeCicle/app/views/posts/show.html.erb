@@ -7,11 +7,9 @@
 <% top_comment = Comment.where("post_id = ?", @post.id).order("votes DESC").first %>
 
 <% if top_comment != nil %>
-
 <% if top_comment.votes >= 50 %>
 <h4>Voting on this post has closed.</h4>
 <% end %>
-
 <% end %>
 
 
@@ -19,13 +17,12 @@
 <div class="comment">
 <p><%= comment.author %></p>
 <p><%= comment.body %></p>
-
 <p>
 <form accept-charset="UTF-8" action="/comments/<%= comment.id %>" method="post">
     <input name="_method" type="hidden" value="put" />
     <input name="comment_id" type="hidden" value="<%= comment.id %>" />
     <input name="post_id" type="hidden" value="<%= @post.id %>" />
-    Votes: <%= comment.votes %><% if session[@post.id.to_s.to_sym] != 1 %> - <button name="vote_type" value="up" type="submit">+1</button> <button name="vote_type" value="down" type="submit">-1</button><% end %>
+    Votes: <%= comment.votes %><% if top_comment.votes < 50 %><% if session[@post.id.to_s.to_sym] != true %> - <button name="vote_type" value="up" type="submit">+1</button> <button name="vote_type" value="down" type="submit">-1</button><% end %><% end %>
 </form>
 </p>
 
