@@ -16,7 +16,6 @@ describe PostsController do
     it "#create" do
       post :create, post:{title: 'title here', body: 'content here', author: 'Miya', revengemail: 'miya@miya.com'}
       response.status.should eq 200
-      # response.should render_template(:index)
     end
 
     it "creates a post with valid params" do
