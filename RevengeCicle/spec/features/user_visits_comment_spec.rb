@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "home page" do
+describe "comment page" do
 
   let!(:comment) {
     comment = Comment.new
@@ -9,25 +9,17 @@ describe "home page" do
     comment.save
   }
 
-  it "can see list of all comments" do
-    visit post_path
+  xit "can see list of all comments" do
+    visit comments_path
     expect(page).to have_content(:comment)
   end
 
-  # it "can create a comment" do
-  #   visit posts_path
-  #   fill_in("post[title]", with: "Title")
-  #   fill_in("post[body]", with: "Body")
-  #   fill_in("post[author]", with: "Miya")
-  #   fill_in("post[revengemail]", with: "miya@miya.com")
-  #   click_button("Murder Time ...")
-  #   expect(page).to have_content("Title")
-  # end
-
-#   it "can click on a post" do
-#     visit root_path
-#     click_on "post title"
-#     expect(page).to have_content "post body"
-#   end
+  xit "can create a comment" do
+    visit comments_path
+    fill_in("comment[body]", with: "Body")
+    fill_in("comment[author]", with: "Miya")
+    click_button("Your Dis")
+    expect(page).to have_content("Body")
+  end
 
 end
