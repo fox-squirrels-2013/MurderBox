@@ -4,9 +4,16 @@
 <h3>by: <%= @post.author %></h3>
 <div id="post_body"><%= @post.body %></div>
 
-<% if Comment.where("post_id = ?", @post.id).order("votes DESC").first.votes >= 50 %>
+<% top_comment = Comment.where("post_id = ?", @post.id).order("votes DESC").first %>
+
+<% if top_comment != nil %>
+
+<% if top_comment.votes >= 50 %>
 <h4>Voting on this post has closed.</h4>
 <% end %>
+
+<% end %>
+
 
 <% Comment.where("post_id = ?", @post.id).order("votes DESC").each do |comment| %>
 <div class="comment">
