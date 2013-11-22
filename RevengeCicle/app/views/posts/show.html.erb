@@ -4,7 +4,7 @@
 <h3>by: <%= @post.author %></h3>
 <div id="post_body"><%= @post.body %></div>
 
-<% top_comment = Comment.where("post_id = ?", @post.id).order("votes DESC").first %>
+<% top_comment = @comments.first %>
 
 <% if top_comment != nil %>
 <% if top_comment.votes >= 50 %>
@@ -12,28 +12,18 @@
 <% end %>
 <% end %>
 
-
-<% Comment.where("post_id = ?", @post.id).order("votes DESC").each do |comment| %>
-<div class="comment">
-
-<p><%= comment.author %></p>
-<p><%= comment.body %></p>
-<p>
-<form accept-charset="UTF-8" action="/comments/<%= comment.id %>" method="post">
-    <input name="_method" type="hidden" value="put" />
-    <input name="comment_id" type="hidden" value="<%= comment.id %>" />
-    <input name="post_id" type="hidden" value="<%= @post.id %>" />
-    Votes: <%= comment.votes %><% if top_comment.votes < 50 %><% if session[@post.id.to_s.to_sym] != true %> - <button name="vote_type" value="up" type="submit">+1</button> <button name="vote_type" value="down" type="submit">-1</button><% end %><% end %>
-</form>
-</p>
-
-</div>
+<ul>
+<% @comments.each do |c| %>
+			<%= render "posts/comment", {comment: c, top_comment: top_comment} %>
 <% end %>
-
-<%= form_for @comment do |comment_form|  %>
+</ul>
+<div class= "commenting">
+<%= form_for @comment, remote: true do |comment_form|  %>
 
 <%= comment_form.text_area :body, rows: 5, cols: 100, placeholder: "Serve this fool!"%><br>
 <%= comment_form.text_field :author, placeholder: "Who are you?" %>
+<%= comment_form.hidden_field :post_id, value: params[:id] %>
   <%= comment_form.submit "Your Dis" %>
 
 <% end %>
+</div>
