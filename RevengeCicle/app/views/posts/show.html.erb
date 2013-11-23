@@ -1,5 +1,5 @@
 <%= link_to "Home", posts_path %>
-
+<div id="single_post">
 <h2><%= @post.title %></h2>
 <h3>By: <%= @post.author %></h3>
 <div id="post_body"><%= @post.body %></div>
@@ -10,10 +10,12 @@
 		<h4>Voting on this post has closed.</h4>
 	<% end %>
 <% end %>
-
-<ul>
+</div>
+<ul class="comments_list">
+	<% counter = 0 %>
 	<% @comments.each do |c| %>
-	<%= render "posts/comment", {comment: c, top_comment: top_comment} %>
+	<li class="comment <%= "purple" if counter == 0 %><%= "green" if counter == 1 %>"><%= render "posts/comment", {comment: c, top_comment: top_comment} %></li>
+	<% counter ^= 1 %>
 	<% end %>
 </ul>
 
