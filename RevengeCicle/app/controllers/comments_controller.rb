@@ -14,17 +14,17 @@ class CommentsController < ActionController::Base
 
   def update
     @comment = Comment.find(params[:comment_id])
-    if @comment.post.comments.order("votes DESC").first.votes < 50
-      if session[params[:post_id].to_sym] != true
-        if params[:vote_type] == "up"
-          Comment.find(params[:comment_id]).up_vote
-        elsif params[:vote_type] == "down"
-          Comment.find(params[:comment_id]).down_vote
-        end
+    if @comment.post.comments.order("votes DESC").first.votes < 50 && session[params[:comment_id].to_sym] != true
 
+    case params[:vote_type]
+      when "up"
+          @comment.up_vote
+      when "down"
+          @comment.down_vote
       end
     end
-    session[params[:post_id].to_sym] = true
+
+    session[params[:comment_id].to_sym] = true
     redirect_to posts_path + "/#{params[:post_id]}"
   end
 
