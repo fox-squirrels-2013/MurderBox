@@ -7,7 +7,7 @@
       <input name="_method" type="hidden" value="put" />
       <input name="comment_id" type="hidden" value="<%= comment.id %>" />
       <input name="post_id" type="hidden" value="<%= comment.post_id %>" />
-      Votes: <%= comment.votes %><% if top_comment.votes < 50 %><% if session[comment.post_id.to_s.to_sym] != true %> - <button name="vote_type" value="up" type="submit">+1</button> <button name="vote_type" value="down" type="submit">-1</button><% end %><% end %>
+      Votes: <%= comment.votes %><% if top_comment.votes < 50 %><% if session[comment.id.to_s.to_sym] != true %> - <button name="vote_type" value="up" type="submit">+1</button> <button name="vote_type" value="down" type="submit">-1</button><% end %><% end %>
     </form>
   </p>
 
