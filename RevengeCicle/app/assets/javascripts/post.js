@@ -16,6 +16,7 @@ $(function(){
   function onErrorComment(e, xhr) {
     debugger
   }
+
 	$(".posting form").on('ajax:success', onSuccessPost)
 	$(".posting form").on('ajax:error', onErrorPost)
   $(".commenting form").on('ajax:success', onSuccessComment)

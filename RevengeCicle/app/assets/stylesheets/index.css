@@ -1,9 +1,9 @@
 body {
-  position: absolute;
-  margin: 0 auto;
   background: url("http://behance.vo.llnwd.net/profiles15/4685/projects/5952097/371b03d707548d4dbb6c8b6895d45f33.jpg");
-  background-size: cover;
-  background-position: center;
+ /* background-size: contain;*/
+ background-size: 100%;
+/*  background-position: center;*/
+  background-repeat: no-repeat;
 }
 
 #feature{
@@ -36,4 +36,14 @@ a:visited{
 }
 a:link{
   color:white;
+}
+
+#content {
+  max-width: 600px;
+  margin: 0 auto;
+  /*margin-top: 150px;*/
+}
+
+textarea#comment_body,textarea#post_body {
+  width: 100% !important;
 }
